@@ -15,6 +15,9 @@ We used the **HAM10000 dataset (10,015 dermatoscopic images)** containing 7 clas
 - **VASC** – Vascular lesions  
 - **DF** – Dermatofibroma
 
+## 🔎 samples
+![Model Architecture](./images/21skinimage.png)
+
 ## 🛠️ Tech Stack  
 - **Language**: Python  
 - **Frameworks**: TensorFlow, Keras  
@@ -33,4 +36,19 @@ We used the **HAM10000 dataset (10,015 dermatoscopic images)** containing 7 clas
 - ✅ **Fast Inference**: ~0.039s per image  
 - ✅ **Deployment-friendly** for mobile/embedded devices
 
-  
+## 🎯 Prunning Method
+![Model Architecture](./images/prungraph2.png)
+
+## 📊 Results
+
+
+| Model                  | Accuracy (%) | Precision | Recall | F1 Score | Size (MB) | Inference Time (s) |
+|------------------------|-------------|-----------|--------|----------|-----------|---------------------|
+| VGG16                  | 88.84       | 88.38     | 88.48  | 88.47    | 75.77     | 0.4612             |
+| ResNet50               | 88.66       | 88.25     | 88.66  | 88.11    | 96.61     | 1.0181             |
+| MobileNetV2            | 83.59       | 82.58     | 83.59  | 82.61    | 12.75     | 0.7848             |
+| **Our DCNN**           | **98.25**   | **98.29** | **98.25** | **98.23** |**1.31**|**0.0428**         |
+| **Pruned DCNN (Ours)** | **98.07**   | **98.15** | **98.07** | **98.02** |**0.45**|**0.0395**         |
+
+## 🎯 Confusion Matrix
+![Model Architecture](./images/confusion_matrix_augtrain.png)
