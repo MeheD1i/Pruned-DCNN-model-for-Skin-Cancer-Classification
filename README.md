@@ -21,6 +21,9 @@ We used the **HAM10000 dataset (10,015 dermatoscopic images)** containing 7 clas
 - **Models**: Custom CNN + Pre-trained CNNs (VGG, ResNet, MobileNet, DenseNet, Inception, Xception, EfficientNet)  
 - **Techniques**: Data Augmentation, Weight Pruning, Grad-CAM++
 
+## 🔎 Model Architecture
+![Model Architecture](./images/dcnn_architetcure.png)
+
 ## ⚡ Key Features  
 - ✅ **Custom Deep CNN** with 6 convolutional layers  
 - ✅ **50% Weight Pruning** → reduces size from **1.31 MB → 0.45 MB**  
