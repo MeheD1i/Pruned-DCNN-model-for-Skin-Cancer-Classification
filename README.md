@@ -15,9 +15,6 @@ We used the **HAM10000 dataset (10,015 dermatoscopic images)** containing 7 clas
 - **VASC** – Vascular lesions  
 - **DF** – Dermatofibroma
 
-## 🔎 samples
-![Model Architecture](./images/21skinimage.png)
-
 ## 🛠️ Tech Stack  
 - **Language**: Python  
 - **Frameworks**: TensorFlow, Keras  
@@ -35,6 +32,37 @@ We used the **HAM10000 dataset (10,015 dermatoscopic images)** containing 7 clas
 - ✅ **Explainable AI (Grad-CAM++)** to highlight decision-making regions  
 - ✅ **Fast Inference**: ~0.039s per image  
 - ✅ **Deployment-friendly** for mobile/embedded devices
+
+## 🧩 Methodology  
+
+Our proposed system classifies skin cancer images using a lightweight pruned DCNN model.  
+The workflow is divided into the following steps:  
+
+1. **Image Preprocessing**  
+   - Resize images to **48×48 pixels**  
+   - Normalize pixel values to **[0, 1]** range  
+
+2. **Data Balancing & Augmentation**  
+   - Balanced dataset using minority class duplication  
+   - Augmentation techniques: rotation, shifting, zooming, shearing, flipping  
+
+3. **Deep CNN Model**  
+   - 6 convolutional layers + MaxPooling  
+   - Fully connected layers (56 & 32 units)  
+   - Softmax layer for **7-class classification**  
+
+4. **Weight Pruning**  
+   - Applied **magnitude-based pruning (50%)**  
+   - Reduced size from **1.31 MB → 0.45 MB**  
+   - Faster inference: **0.0428s → 0.0395s**  
+
+5. **Transfer Learning Baselines**  
+   - Compared performance with **MobileNetV2, ResNet, DenseNet, VGG, Xception, Inception**  
+
+6. **Model Interpretability**  
+   - Applied **Grad-CAM++** to highlight key regions of dermatoscopic images  
+   - Ensures transparency in model decision-making  
+
 
 ## 🎯 Prunning Method
 ![Model Architecture](./images/prungraph2.png)
